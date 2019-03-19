@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.3"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { word-wrap:break-word;word-break:break-all;overflow:auto;}
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 2ex;
+    margin-bottom: 3ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /* width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 99%;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #74A474; }
+.failClass  { background-color: #FDD283; }
+.errorClass { background-color: #FF6600; }
+.passCase   { color: #6c6; }
+.failCase   { color: #FF6600; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+#div_base {
+            position:absolute;
+            top:0%;
+            left:5%;
+            right:5%;
+            width: auto;
+            height: auto;
+            margin: -15px 0 0 0;
+}
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+<div id="div_base">
+
+<div class='page-header'>
+<h1>接口测试报告</h1>
+<p class='attribute'><strong>开始时间:</strong> 2019-03-19 16:49:46</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:01.425100</p>
+<p class='attribute'><strong>状态:</strong> 通过 10</p>
+
+</div>
+<p class='description'>搜索用例执行情况：</p>
+
+
+
+<div class="btn-group btn-group-sm">
+<button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+<button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+<button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+</div>
+<p></p>
+<table id='result_table' class="table table-bordered">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>测试套件/测试用例</td>
+    <td>总数</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>查看</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_math1.TestMathClassDict_0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_subtract</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_math1.TestMathClassDict_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">详情</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_subtract</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_math2.TestMathClassDict_0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">详情</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_subtract</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        通过</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: {"count":3,"q":"拼多多","page":1,"totalCount":23,"list":[{"id":1419027,"name":"拼多多","symbol":"ZH1385055","description":null,"active_flag":true,"star":0.0,"market":"us","owner_id":9171827445,"created_at":1534253992275,"updated_at":1534253992389,"last_rb_id":44255336,"daily_gain":5.34,"monthly_gain":-6.14,"total_gain":32.87,"net_value":1.3287,"rank_percent":null,"annualized_gain_rate":32.87,"bb_rate":14.4,"following":false,"follower_count":2,"style":{"name":"疯狂过山车","color0":"#ff705c","color1":"#ff5f3b","degree":30.0},"tag":null,"recommend_reason":null,"sale_flag":false,"sell_flag":false,"commission":null,"initial_capital":null,"listed_flag":false,"contractor_id":null,"contractor_name":null,"last_user_rb_gid":44255336,"owner":{"subscribeable":false,"remark":null,"status":0,"common_count":0,"_source":null,"description":"贪婪是最大的原罪","domain":null,"location":null,"type":"1","id":9171827445,"url":null,"screen_name":"稳中有升","following":false,"profile":"/9171827445","verified":false,"blocking":false,"donate_count":0,"friends_count":48,"followers_count":102,"st_color":"1","follow_me":false,"verified_description":"","province":null,"city":null,"gender":"m","step":"null","blog_description":null,"verified_type":0,"last_status_id":118771942,"status_count":499,"stats":null,"recommend":null,"intro":null,"stock_status_count":null,"allow_all_stock":false,"stocks_count":null,"name":null,"group_ids":null,"block_status":0,"profile_image_url":"community/20152/1426133392396-1426133394084.jpg,community/20152/1426133392396-1426133394084.jpg!180x180.png,community/20152/1426133392396-1426133394084.jpg!50x50.png,community/20152/1426133392396-1426133394084.jpg!30x30.png","photo_domain":"//xavatar.imedao.com/","verified_realname":false,"verified_infos":[{"verified_type":"5","verified_desc":"用户已完成实名身份认证"}],"name_pinyin":null,"screenname_pinyin":null}},{"id":1418857,"name":"拼多多","symbol":"ZH1384885","description":"","active_flag":true,"star":0.0,"market":"us","owner_id":1112821842,"created_at":1534226808615,"updated_at":1548261503839,"last_rb_id":48436701,"daily_gain":5.25,"monthly_gain":-3.67,"total_gain":37.35,"net_value":1.3735,"rank_percent":null,"annualized_gain_rate":37.35,"bb_rate":16.58,"following":false,"follower_count":1,"style":{"name":"疯狂过山车","color0":"#ff705c","color1":"#ff5f3b","degree":30.0},"tag":null,"recommend_reason":null,"sale_flag":false,"sell_flag":false,"commission":null,"initial_capital":null,"listed_flag":false,"contractor_id":null,"contractor_name":null,"last_user_rb_gid":48436701,"owner":{"subscribeable":false,"remark":null,"status":0,"common_count":0,"_source":null,"description":"顺大势","domain":null,"location":null,"type":"1","id":1112821842,"url":null,"screen_name":"pandy9418","following":false,"profile":"/1112821842","verified":false,"blocking":false,"donate_count":0,"friends_count":313,"followers_count":22,"st_color":"1","follow_me":false,"verified_description":null,"province":"陕西","city":"渭南","gender":"m","step":"null","blog_description":null,"verified_type":0,"last_status_id":115129896,"status_count":113,"stats":null,"recommend":null,"intro":null,"stock_status_count":null,"allow_all_stock":false,"stocks_count":null,"name":null,"group_ids":null,"block_status":0,"profile_image_url":"community/20152/1426999824947-1426999847975.jpg,community/20152/1426999824947-1426999847975.jpg!180x180.png,community/20152/1426999824947-1426999847975.jpg!50x50.png,community/20152/1426999824947-1426999847975.jpg!30x30.png","photo_domain":"//xavatar.imedao.com/","verified_realname":false,"verified_infos":null,"name_pinyin":null,"screenname_pinyin":null}},{"id":1410889,"name":"拼多多","symbol":"ZH1376920","description":"","active_flag":true,"star":0.0,"market":"us","owner_id":6688919392,"created_at":1532960720113,"updated_at":1532960720124,"last_rb_id":43795392,"daily_gain":5.34,"monthly_gain":-6.14,"total_gain":9.03,"net_value":1.0903,"rank_percent":null,"annualized_gain_rate":9.03,"bb_rate":3.42,"following":false,"follower_count":2,"style":{"name":"疯狂过山车","color0":"#ff705c","color1":"#ff5f3b","degree":30.0},"tag":null,"recommend_reason":null,"sale_flag":false,"sell_flag":false,"commission":null,"initial_capital":null,"listed_flag":false,"contractor_id":null,"contractor_name":null,"last_user_rb_gid":43795392,"owner":{"subscribeable":false,"remark":null,"status":0,"common_count":0,"_source":null,"description":"Fab Less Design House","domain":null,"location":null,"type":"1","id":6688919392,"url":null,"screen_name":"智慧晶片业者","following":false,"profile":"/6688919392","verified":true,"blocking":false,"donate_count":0,"friends_count":438,"followers_count":5868,"st_color":"1","follow_me":false,"verified_description":"半导体芯片领域研究达人","province":"","city":"未知","gender":"n","step":"null","blog_description":null,"verified_type":1,"last_status_id":123059113,"status_count":856,"stats":null,"recommend":null,"intro":null,"stock_status_count":null,"allow_all_stock":false,"stocks_count":null,"name":null,"group_ids":null,"block_status":0,"profile_image_url":"community/20175/1496387962346-1496387962513.jpeg,community/20175/1496387962346-1496387962513.jpeg!180x180.png,community/20175/1496387962346-1496387962513.jpeg!50x50.png,community/20175/1496387962346-1496387962513.jpeg!30x30.png","photo_domain":"//xavatar.imedao.com/","verified_realname":false,"verified_infos":[{"verified_type":"3","verified_desc":"半导体芯片领域研究达人"}],"name_pinyin":null,"screenname_pinyin":null}}],"maxPage":8}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_math2.TestMathClassDict_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">详情</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_subtract</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        通过</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: {"count":3,"q":"中国平安","page":2,"totalCount":227,"list":[{"id":1413288,"name":"中国平安","symbol":"ZH1379319","description":"","active_flag":true,"star":0.0,"market":"cn","owner_id":3296805998,"created_at":1533264348571,"updated_at":1536197942613,"last_rb_id":44893165,"daily_gain":0.47,"monthly_gain":19.13,"total_gain":31.23,"net_value":1.3123,"rank_percent":null,"annualized_gain_rate":31.23,"bb_rate":12.74,"following":false,"follower_count":1,"style":{"name":"小浪花","color0":"#3ec7ff","color1":"#00a6eb","degree":30.0},"tag":null,"recommend_reason":null,"sale_flag":false,"sell_flag":false,"commission":null,"initial_capital":null,"listed_flag":false,"contractor_id":null,"contractor_name":null,"last_user_rb_gid":43935371,"owner":{"subscribeable":false,"remark":null,"status":2,"common_count":0,"_source":null,"description":"","domain":null,"location":null,"type":"1","id":3296805998,"url":null,"screen_name":"sssss1sssss","following":false,"profile":"/3296805998","verified":false,"blocking":false,"donate_count":0,"friends_count":4,"followers_count":2,"st_color":"1","follow_me":false,"verified_description":null,"province":"省/直辖市","city":"城市/地区","gender":"n","step":"null","blog_description":null,"verified_type":0,"last_status_id":0,"status_count":6,"stats":null,"recommend":null,"intro":null,"stock_status_count":null,"allow_all_stock":false,"stocks_count":null,"name":null,"group_ids":null,"block_status":0,"profile_image_url":"community/20187/1533191129599-1533191129789.jpeg,community/20187/1533191129599-1533191129789.jpeg!180x180.png,community/20187/1533191129599-1533191129789.jpeg!50x50.png,community/20187/1533191129599-1533191129789.jpeg!30x30.png","photo_domain":"//xavatar.imedao.com/","verified_realname":false,"verified_infos":null,"name_pinyin":null,"screenname_pinyin":null}},{"id":109735,"name":"中国平安涨涨涨","symbol":"ZH109833","description":"","active_flag":true,"star":0.0,"market":"cn","owner_id":1388649777,"created_at":1420598486168,"updated_at":1536201063676,"last_rb_id":44937754,"daily_gain":0.47,"monthly_gain":19.13,"total_gain":118.41,"net_value":2.1841,"rank_percent":null,"annualized_gain_rate":20.43,"bb_rate":4.82,"following":false,"follower_count":2,"style":{"name":"小浪花","color0":"#3ec7ff","color1":"#00a6eb","degree":30.0},"tag":null,"recommend_reason":null,"sale_flag":false,"sell_flag":false,"commission":null,"initial_capital":null,"listed_flag":false,"contractor_id":null,"contractor_name":null,"last_user_rb_gid":649832,"owner":{"subscribeable":false,"remark":null,"status":1,"common_count":0,"_source":null,"description":"","domain":null,"location":null,"type":"1","id":1388649777,"url":null,"screen_name":"玉之光华","following":false,"profile":"/1388649777","verified":false,"blocking":false,"donate_count":0,"friends_count":9,"followers_count":2,"st_color":"1","follow_me":false,"verified_description":null,"province":"浙江","city":"温州","gender":"n","step":"three","blog_description":null,"verified_type":0,"last_status_id":34929684,"status_count":1,"stats":null,"recommend":null,"intro":null,"stock_status_count":null,"allow_all_stock":false,"stocks_count":null,"name":null,"group_ids":null,"block_status":0,"profile_image_url":"community/20150/1420598324416-1420598342932.jpg,community/20150/1420598324416-1420598342932.jpg!180x180.png,community/20150/1420598324416-1420598342932.jpg!50x50.png,community/20150/1420598324416-1420598342932.jpg!30x30.png","photo_domain":"//xavatar.imedao.com/","verified_realname":false,"verified_infos":null,"name_pinyin":null,"screenname_pinyin":null}},{"id":1412165,"name":"中国平安","symbol":"ZH1378196","description":null,"active_flag":true,"star":0.0,"market":"cn","owner_id":9842273971,"created_at":1533115422944,"updated_at":1536199675483,"last_rb_id":44916990,"daily_gain":0.47,"monthly_gain":19.13,"total_gain":28.09,"net_value":1.2809,"rank_percent":null,"annualized_gain_rate":28.09,"bb_rate":11.31,"following":false,"follower_count":1,"style":{"name":"小浪花","color0":"#3ec7ff","color1":"#00a6eb","degree":30.0},"tag":null,"recommend_reason":null,"sale_flag":false,"sell_flag":false,"commission":null,"initial_capital":null,"listed_flag":false,"contractor_id":null,"contractor_name":null,"last_user_rb_gid":43868520,"owner":{"subscribeable":false,"remark":null,"status":2,"common_count":0,"_source":null,"description":null,"domain":null,"location":null,"type":"1","id":9842273971,"url":null,"screen_name":"小桃酱","following":false,"profile":"/9842273971","verified":false,"blocking":false,"donate_count":0,"friends_count":73,"followers_count":4,"st_color":"1","follow_me":false,"verified_description":null,"province":null,"city":null,"gender":"n","step":"null","blog_description":null,"verified_type":0,"last_status_id":0,"status_count":10,"stats":null,"recommend":null,"intro":null,"stock_status_count":null,"allow_all_stock":false,"stocks_count":null,"name":null,"group_ids":null,"block_status":0,"profile_image_url":"community/20175/1498112337933-1498112338748.jpg,community/20175/1498112337933-1498112338748.jpg!180x180.png,community/20175/1498112337933-1498112338748.jpg!50x50.png,community/20175/1498112337933-1498112338748.jpg!30x30.png","photo_domain":"//xavatar.imedao.com/","verified_realname":false,"verified_infos":null,"name_pinyin":null,"screenname_pinyin":null}}],"maxPage":76}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_search.TestSearch</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',2)">详情</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search_00001__test_search_cube: test_search_00001__test_search_cube</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        通过</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: {'status_code': 200}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search_00002__test_search_statuses: test_search_00002__test_search_statuses</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        通过</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: {'status_code': 200}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_search1.TestCaseSearch</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',4)">详情</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search2_0_pinyin</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search2_1_hanzi</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search2_2_4gezi</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='pt6.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_search2_3_teshufuhao</div></td>
+    <td colspan='5' align='center'>通过</td>
+</tr>
+
+<tr id='total_row'>
+    <td>总计</td>
+    <td>10</td>
+    <td>10</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</div>
+</body>
+</html>

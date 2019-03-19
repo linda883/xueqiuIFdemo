@@ -1,0 +1,25 @@
+-test_search_cube:
+    url: https://xueqiu.com/cube/search.json
+    method: GET
+    header:
+      {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36',
+        'Cookie': 'xq_a_token=8309c28a83ae5d20f26b7fcc22debbcd459794bd;'
+      }
+    payload:
+      {'q': '中国平安', 'count': 3, 'page':1}
+    validate:
+      {"status_code":200}
+-test_search_statuses:
+    url: https://xueqiu.com/statuses/search.json
+    method: GET
+    header:
+      {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36',
+        'Cookie': 'xq_a_token=8309c28a83ae5d20f26b7fcc22debbcd459794bd;'
+      }
+    payload:
+      {'sort':'relevance','source':'all','q':'中国平安','count':10,'page':1}
+    validate:
+      {"status_code":200}
+
